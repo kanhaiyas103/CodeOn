@@ -1,7 +1,8 @@
 "use client"
-import { useRef } from "react"
+
 import type React from "react"
-import { Send, Paperclip } from "lucide-react"
+import { useRef } from "react"
+import { Paperclip, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export default function ChatInput({
@@ -28,22 +29,22 @@ export default function ChatInput({
 
   return (
     <div className="border-t border-border bg-card/40 backdrop-blur-sm p-6">
-      <div className="max-w-4xl mx-auto flex gap-3">
+      <div className="max-w-5xl mx-auto flex gap-3">
         <div className="flex-1 flex gap-2 items-end bg-input border border-border rounded-lg p-3">
-
-          {/* ✅ REAL FILE INPUT */}
           <input
             type="file"
             ref={fileInputRef}
             className="hidden"
+            accept="image/*,.txt,.md,.json,.js,.ts,.tsx,.jsx,.py,.java,.cpp,.c,.go,.rs,.html,.css,.pdf,.docx,.zip"
             onChange={handleFileUpload}
+            disabled={isLoading}
           />
 
-          {/* ✅ WORKING CLIP BUTTON */}
           <Button
             type="button"
             variant="ghost"
             size="sm"
+            disabled={isLoading}
             onClick={() => fileInputRef.current?.click()}
             className="text-muted-foreground hover:text-foreground"
           >
@@ -57,6 +58,7 @@ export default function ChatInput({
             placeholder="Ask Codeon to generate, debug, or explain any code..."
             className="flex-1 bg-transparent text-foreground placeholder:text-muted-foreground resize-none outline-none text-sm leading-relaxed font-mono"
             rows={3}
+            disabled={isLoading}
           />
         </div>
 

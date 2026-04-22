@@ -2,5 +2,9 @@ node_modules
 .next
 .env
 .env.local
-dist
-build
+/dist
+/build
+/temp/project-index.json
+/temp/uploads
+/temp/generated-projects
+/temp/session-store

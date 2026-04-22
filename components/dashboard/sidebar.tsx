@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { MessageSquare, Play, Zap } from "lucide-react"
+import { MessageSquare, Play, Settings, Zap } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 export default function Sidebar() {
@@ -12,6 +12,7 @@ export default function Sidebar() {
     { href: "/dashboard/chat", label: "AI Chat", icon: MessageSquare },
     { href: "/dashboard/run", label: "Run Code", icon: Play },
     { href: "/dashboard/build", label: "Build UI", icon: Zap },
+    { href: "/dashboard/settings", label: "Settings", icon: Settings },
   ]
 
   return (

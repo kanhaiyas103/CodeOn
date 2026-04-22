@@ -17,7 +17,12 @@ export default function BuildPreview({
           </div>
         </div>
       ) : html ? (
-        <iframe srcDoc={html} className="w-full h-full border-0" title="Preview" />
+        <iframe
+          srcDoc={html}
+          className="w-full h-full border-0"
+          title="Preview"
+          sandbox="allow-scripts"
+        />
       ) : (
         <div className="h-full flex items-center justify-center">
           <div className="text-center">
